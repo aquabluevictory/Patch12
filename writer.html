@@ -2574,7 +2574,7 @@ body.viewer #mine-empty{display:none!important}
             URL 입력
           </button> </div> <!-- 파일 업로드 패널 --> <div class="media-panel" id="panel-file"> <div class="cover-attach" id="cover-attach"> <input type="file" id="media-input" hidden> <button class="attach-empty" id="attach-btn" type="button"> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="9" r="1.6"/><path d="m21 15-5-5L5 21"/></svg> <span>이미지 · 영상 · 음성 · 파일 추가 <small>(선택)</small></span> </button> <button class="gen-cover-btn" id="gen-cover-btn" type="button"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg> <span id="gen-cover-label">디자인 커버 생성</span> </button> <div class="ai-gen" id="ai-gen" style="display:none"> <div class="ai-divider"><span>또는 AI로 생성</span><small>프록시 필요</small></div> <input type="text" id="ai-prompt" class="ai-prompt" placeholder="AI 프롬프트 (비우면 제목 사용)" autocomplete="off" spellcheck="false"> <div class="ai-btns"> <button class="ai-btn" id="ai-image-btn" type="button">🖼 AI 이미지</button> <button class="ai-btn" id="ai-video-btn" type="button">🎬 AI 영상</button> <button class="ai-btn" id="ai-key-btn" type="button" style="flex:0 0 auto;padding:10px 13px" title="이미지 엔진 설정 — OpenAI API 키">⚙</button> </div> <div class="ai-status" id="ai-status"></div> </div> <div class="attach-preview" id="attach-preview" hidden> <div id="preview-slot"></div> <button class="attach-remove" id="media-remove" type="button" aria-label="첨부 제거"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> </button> </div> </div> </div> <!-- URL 입력 패널 --> <div class="media-panel" id="panel-url" hidden> <div class="url-input-wrap" id="url-input-wrap"> <div class="url-row"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--meta);flex:0 0 auto"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> <input type="url" id="url-input" class="url-field" placeholder="https:// 이미지·영상·YouTube·Gamma URL" autocomplete="off" spellcheck="false"> <button class="url-clear" id="url-clear" type="button" aria-label="지우기" hidden> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> </button> </div> <button class="url-submit" id="url-submit" type="button" disabled> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               적용
-            </button> </div> <!-- URL 미리보기 --> <div class="url-preview" id="url-preview" hidden> <div id="url-preview-inner"></div> <button class="attach-remove" id="url-remove" type="button" aria-label="URL 제거"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> </button> </div> <div class="url-status" id="url-status"></div> </div> <div class="media-hint" id="media-hint"></div> <div class="toggle-grid"> <label class="live-toggle"> <span class="switch"> <input type="checkbox" id="live-input" aria-label="속보로 표시"> <span class="track"></span><span class="knob"></span> </span> <span>속보(LIVE) 표시</span> </label> <label class="live-toggle"> <span class="switch feat"> <input type="checkbox" id="feat-input" aria-label="핵심 리포트에 노출"> <span class="track"></span><span class="knob"></span> </span> <span>핵심 리포트에 노출</span> </label> </div> <input class="inp title-inp" id="title-input" placeholder="리포트 제목 — 결론이 보이는 한 줄" maxlength="120"> <div class="title-gen-row"><button type="button" class="title-genbtn" id="title-genbtn">✨ 제목 생성</button><span class="title-genstatus" id="title-genstatus"></span></div> <div class="formerr" id="formerr">제목을 입력해 주세요.</div> <input class="inp" id="source-input" placeholder="출처 (예: 입시 리서치 데스크)" value="입시 리서치 데스크" maxlength="40"> <div class="md-toolbar" id="md-toolbar" role="toolbar" aria-label="서식 도구"> <button type="button" data-md="bold" title="굵게 (**텍스트**)" aria-label="굵게"><b>B</b></button> <button type="button" data-md="italic" title="기울임 (*텍스트*)" aria-label="기울임"><i>I</i></button> <span class="sep"></span> <button type="button" data-md="h2" title="제목 (## )" aria-label="제목">H</button> <button type="button" data-md="quote" title="인용 (> )" aria-label="인용">❝</button> <button type="button" data-md="list" title="목록 (- )" aria-label="목록">≡</button> <span class="sep"></span> <button type="button" data-md="link" title="링크" aria-label="링크">↗</button> <button type="button" data-md="code" title="코드 (`코드`)" aria-label="코드">&lt;/&gt;</button> <button type="button" class="preview-toggle" id="preview-toggle" aria-pressed="false">미리보기</button> </div>
+            </button> </div> <!-- URL 미리보기 --> <div class="url-preview" id="url-preview" hidden> <div id="url-preview-inner"></div> <button class="attach-remove" id="url-remove" type="button" aria-label="URL 제거"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> </button> </div> <div class="url-status" id="url-status"></div> </div> <div class="media-hint" id="media-hint"></div> <div class="toggle-grid"> <label class="live-toggle"> <span class="switch"> <input type="checkbox" id="live-input" aria-label="속보로 표시"> <span class="track"></span><span class="knob"></span> </span> <span>속보(LIVE) 표시</span> </label> <label class="live-toggle"> <span class="switch feat"> <input type="checkbox" id="feat-input" aria-label="핵심 리포트에 노출"> <span class="track"></span><span class="knob"></span> </span> <span>핵심 리포트에 노출</span> </label> <div class="live-toggle" id="auto-ai-row"> <label style="display:flex;align-items:center;gap:12px;flex:1 1 auto;min-width:0;cursor:pointer"> <span class="switch"> <input type="checkbox" id="auto-ai-input" aria-label="이미지가 없으면 게시할 때 AI로 자동 생성"> <span class="track"></span><span class="knob"></span> </span> <span style="font-family:Inter,sans-serif;font-size:13.5px;color:#4A4F5A;font-weight:450;flex:1 1 auto;line-height:1.35">이미지 없으면 ChatGPT로 자동 생성<small id="auto-ai-state" style="display:block;font-size:11.5px;color:var(--meta);margin-top:2px"></small></span> </label> <button type="button" class="ai-btn" id="auto-ai-key" style="flex:0 0 auto;padding:7px 12px;font-size:12px" title="OpenAI API 키 설정">키 설정</button> </div> </div> <input class="inp title-inp" id="title-input" placeholder="리포트 제목 — 결론이 보이는 한 줄" maxlength="120"> <div class="title-gen-row"><button type="button" class="title-genbtn" id="title-genbtn">✨ 제목 생성</button><span class="title-genstatus" id="title-genstatus"></span></div> <div class="formerr" id="formerr">제목을 입력해 주세요.</div> <input class="inp" id="source-input" placeholder="출처 (예: 입시 리서치 데스크)" value="입시 리서치 데스크" maxlength="40"> <div class="md-toolbar" id="md-toolbar" role="toolbar" aria-label="서식 도구"> <button type="button" data-md="bold" title="굵게 (**텍스트**)" aria-label="굵게"><b>B</b></button> <button type="button" data-md="italic" title="기울임 (*텍스트*)" aria-label="기울임"><i>I</i></button> <span class="sep"></span> <button type="button" data-md="h2" title="제목 (## )" aria-label="제목">H</button> <button type="button" data-md="quote" title="인용 (> )" aria-label="인용">❝</button> <button type="button" data-md="list" title="목록 (- )" aria-label="목록">≡</button> <span class="sep"></span> <button type="button" data-md="link" title="링크" aria-label="링크">↗</button> <button type="button" data-md="code" title="코드 (`코드`)" aria-label="코드">&lt;/&gt;</button> <button type="button" class="preview-toggle" id="preview-toggle" aria-pressed="false">미리보기</button> </div>
         <textarea class="inp body-inp" id="body-input" placeholder="본문 — 마크다운 지원: **굵게**, ## 제목, - 목록, &gt; 인용, [링크](https://…). 숫자에는 기준일과 출처를 붙입니다."></textarea>
         <div class="md-preview md-rendered" id="md-preview" aria-live="polite"></div> <div class="char-count" id="char-count">0자</div> </div> </div> <!-- 리더 오버레이 --> <div class="overlay reader" id="reader" role="dialog" aria-modal="true" aria-label="리포트 읽기"> <div class="ov-bar"> <button class="iconbtn" id="reader-close" aria-label="뒤로"> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg> </button> <div class="title">리포트</div> <button class="iconbtn" id="r-edit" aria-label="수정" style="display:none"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"/></svg> </button> <button class="iconbtn" id="r-del" aria-label="삭제" style="display:none"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg> </button> <button class="iconbtn" id="r-translate" aria-label="번역" title="번역"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg> </button> <button class="iconbtn" id="r-share" aria-label="공유"> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg> </button> </div> <div class="ov-body"> <div class="cover" id="r-cover"></div> <div class="r-kicker" id="r-kicker"></div> <div class="trans-badge" id="trans-badge" hidden> <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg> <span id="trans-badge-label"></span> <button id="trans-revert" type="button">원문 보기</button> </div> <h1 id="r-title"></h1> <div class="r-meta" id="r-meta"></div> <div class="r-body" id="r-body"></div> <div class="reaction-bar" id="rxn-bar"> <button class="rxn-btn" id="rxn-like" type="button" aria-pressed="false"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg> <span>좋아요</span><span class="rxn-count" id="rxn-like-n">0</span> </button> <button class="rxn-btn" id="rxn-bm" type="button" aria-pressed="false"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/></svg> <span>저장</span> </button> <button class="share-btn" id="rxn-share" type="button"> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
             공유
@@ -4518,7 +4518,7 @@ body.viewer #mine-empty{display:none!important}
     const v=window.prompt(
       'ChatGPT(OpenAI) 이미지 생성 설정\n현재 키: '+cur+'\n\n'
       +'platform.openai.com에서 발급한 API 키(sk-…)를 입력하세요.\n'
-      +'비워두고 확인하면 키를 지우고 무료 AI로 생성해요.\n'
+      +'비워두고 확인하면 저장된 키를 지워요.\n'
       +'키는 이 기기 브라우저에만 저장돼요.', '');
     if(v===null) return;
     const t=v.trim();
@@ -4532,24 +4532,36 @@ body.viewer #mine-empty{display:none!important}
     aiStatus('ChatGPT 이미지 사용 설정 완료 ✓','ok');
   }
   function clearOpenAIKey(){ OPENAI_KEY=''; try{appStorage.removeItem('elifsuwon_openai_key');}catch(e){} }
-  async function genImageOpenAI(prompt){
+  async function genImageOpenAI(prompt, opt){
+    opt=opt||{};
+    const models=opt.models||['gpt-image-1','dall-e-3'];
     const call=async(model)=>{
-      const body={model:model, prompt:prompt, n:1, size:(model==='gpt-image-1'?'1536x1024':'1792x1024')};
+      const size=(opt.sizes&&opt.sizes[model])||(model==='gpt-image-1'?'1536x1024':'1792x1024');
+      const body={model:model, prompt:prompt, n:1, size:size};
+      if(opt.quality && /^gpt-image/.test(model)) body.quality=opt.quality;
       if(model==='dall-e-3') body.response_format='b64_json';
       const res=await fetch('https://api.openai.com/v1/images/generations',{
         method:'POST',
         headers:{'Content-Type':'application/json','Authorization':'Bearer '+OPENAI_KEY},
-        body:JSON.stringify(body)
+        body:JSON.stringify(body),
+        signal:opt.signal
       });
       const d=await res.json().catch(()=>({}));
-      if(res.status===401){ clearOpenAIKey(); const e=new Error('API 키가 유효하지 않아 지웠어요. ⚙에서 다시 설정하세요'); e.fatal=true; throw e; }
+      if(res.status===401){ clearOpenAIKey(); const e=new Error('API 키가 유효하지 않아 지웠어요. 키를 다시 설정해 주세요'); e.fatal=true; throw e; }
       if(!res.ok){ throw new Error((d.error&&d.error.message)||('HTTP '+res.status)); }
       const b64=d.data&&d.data[0]&&d.data[0].b64_json;
       if(!b64) throw new Error('이미지 데이터가 비어 있어요');
       return 'data:image/png;base64,'+b64;
     };
-    try{ return await call('gpt-image-1'); }
-    catch(e){ if(e.fatal) throw e; return await call('dall-e-3'); }
+    let lastErr;
+    for(let i=0;i<models.length;i++){
+      try{ return await call(models[i]); }
+      catch(e){
+        if(e.fatal || e.name==='AbortError') throw e;
+        lastErr=e;
+      }
+    }
+    throw lastErr||new Error('이미지 생성에 실패했어요');
   }
   function aiStatus(t,cls){ const s=$('ai-status'); if(!s) return; s.className='ai-status'+(cls?' '+cls:''); s.textContent=t||''; }
   function aiBusy(on){ $('ai-image-btn').disabled=on; $('ai-video-btn').disabled=on; }
@@ -4585,6 +4597,88 @@ body.viewer #mine-empty{display:none!important}
       r.readAsDataURL(blob);
     });
   }
+  /* ── 게시할 때 이미지가 없으면 ChatGPT(gpt-image)로 대표 이미지를 자동 생성 ─────────────
+     · 새 글을 게시하는 순간 첨부가 하나도 없을 때만 동작한다. 디자인 커버·영상·링크 등을 직접
+       붙여 둔 글은 손대지 않고, 기존 글을 수정·저장할 때도 동작하지 않는다.
+     · 생성이 실패하거나 오래 걸려도 게시는 반드시 진행된다(이미지 없이).
+     · OpenAI 키는 이 기기 브라우저(localStorage)에만 저장되고 발행본(reader)에는 포함되지 않는다.
+     · 모델·크기·품질·제한시간은 아래 상수만 고치면 된다. */
+  const AUTO_AI_KEY='elifsuwon_ai_auto';      // '0' 이면 끔 · 값이 없으면 켬
+  const AUTO_IMG_MODELS=['gpt-image-2.5-flare','gpt-image-2','gpt-image-1'];   // 앞에서부터 시도, 실패하면 다음 모델
+  const AUTO_IMG_SIZES={'gpt-image-2.5-flare':'1536x864','gpt-image-2':'1536x864','gpt-image-1':'1536x1024'};
+  const AUTO_IMG_QUALITY='medium';            // low | medium | high — 비용·속도 조절
+  const AUTO_IMG_TIMEOUT=90000;               // ms — 넘기면 이미지 없이 게시
+  let autoBusy=false, autoHintShown=false;
+  function autoAiOn(){ try{ return appStorage.getItem(AUTO_AI_KEY)!=='0'; }catch(e){ return true; } }
+  function autoImagePrompt(title, body, catLabel){
+    const plain=String(body||'')
+      .replace(/\x60{3}[\s\S]*?\x60{3}/g,' ')
+      .replace(/<[^>]+>/g,' ')
+      .replace(/!?\[([^\]]*)\]\([^)]*\)/g,'$1')
+      .replace(/https?:\/\/\S+/g,' ')
+      .replace(/[#>*_\x60~|]/g,' ')
+      .replace(/\s+/g,' ').trim().slice(0,300);
+    return 'Editorial cover illustration for a Korean university-admissions research report. '
+      +'Topic: '+title+'. '
+      +(catLabel?'Section: '+catLabel+'. ':'')
+      +(plain?'Key points: '+plain+' ':'')
+      +'Style: calm, modern editorial illustration on a warm off-white background, restrained palette with a single accent color, clean shapes with subtle paper texture, wide 16:9 composition with generous negative space. '
+      +'Do not include any text, letters, numbers, logos, watermarks, or recognizable real people.';
+  }
+  function paintAutoAi(){
+    const inp=$('auto-ai-input'), st=$('auto-ai-state');
+    if(!inp||!st) return;
+    inp.checked=autoAiOn();
+    st.textContent=OPENAI_KEY?('ChatGPT 연결됨 · '+OPENAI_KEY.slice(0,7)+'…'):(AI_PROXY?'프록시 연결됨':'키 필요 — 오른쪽 ‘키 설정’에서 OpenAI 키를 입력하세요');
+  }
+  /* 반환: {media, note} — media 는 생성된 이미지(없으면 null), note 는 게시 안내 스낵바에 덧붙일 짧은 문구. 절대 throw 하지 않는다. */
+  async function maybeAutoCover(title, snap){
+    if(!autoAiOn()) return {media:null, note:''};
+    if(!OPENAI_KEY && !AI_PROXY){
+      if(autoHintShown) return {media:null, note:''};
+      autoHintShown=true;
+      return {media:null, note:'‘키 설정’에 OpenAI 키를 넣으면 이미지가 자동 생성돼요'};
+    }
+    const engine=OPENAI_KEY?'ChatGPT':'프록시';
+    const label=publishBtn.textContent;
+    autoBusy=true; publishBtn.disabled=true; publishBtn.textContent='이미지 생성 중…';
+    showSnack(engine+'로 대표 이미지를 만드는 중이에요 (보통 10–30초)', null, null, AUTO_IMG_TIMEOUT+5000);
+    const ctrl=new AbortController(); const tm=setTimeout(()=>ctrl.abort(), AUTO_IMG_TIMEOUT);
+    try{
+      const prompt=autoImagePrompt(title, snap.body, snap.catLabel);
+      let dataUrl;
+      if(OPENAI_KEY){
+        dataUrl=await genImageOpenAI(prompt,{models:AUTO_IMG_MODELS, sizes:AUTO_IMG_SIZES, quality:AUTO_IMG_QUALITY, signal:ctrl.signal});
+      } else {
+        const res=await fetch(AI_PROXY+'/image',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:prompt}),signal:ctrl.signal});
+        const data=await res.json().catch(()=>({}));
+        if(!res.ok||!data.dataUrl) throw new Error(data.error||('HTTP '+res.status));
+        dataUrl=data.dataUrl;
+      }
+      const out=await new Promise(ok=>compressFromDataUrl(dataUrl, ok));
+      if(!out) throw new Error('이미지 처리 실패');
+      return {media:{kind:'image', data:out, name:'AI 이미지 ('+engine+')'}, note:'AI 이미지 자동 생성 ✓'};
+    }catch(e){
+      const msg=(e&&e.name==='AbortError')?'시간 초과':((e&&e.message)||'알 수 없는 오류');
+      return {media:null, note:'이미지 자동 생성 실패 ('+String(msg).slice(0,70)+') — 이미지 없이 게시했어요'};
+    }finally{
+      clearTimeout(tm); autoBusy=false;
+      if(publishBtn.textContent==='이미지 생성 중…') publishBtn.textContent=label;
+      validate(); paintAutoAi();
+    }
+  }
+  (function(){
+    const inp=$('auto-ai-input'), kb=$('auto-ai-key'); if(!inp||!kb) return;
+    inp.addEventListener('change',()=>{
+      try{ appStorage.setItem(AUTO_AI_KEY, inp.checked?'1':'0'); }catch(e){}
+      if(inp.checked && !OPENAI_KEY && !AI_PROXY) setOpenAIKey();
+      paintAutoAi();
+    });
+    kb.addEventListener('click',()=>{ setOpenAIKey(); paintAutoAi(); if(OPENAI_KEY) showSnack('ChatGPT 이미지 사용 설정 완료', null); });
+    // 생성 중에 작성창을 닫으면 상태가 꼬이므로 잠깐 막는다 (원래 닫기 핸들러보다 먼저 등록되어 먼저 실행됨)
+    $('composer-close').addEventListener('click',e=>{ if(autoBusy){ e.stopImmediatePropagation(); showSnack('이미지를 만드는 중이에요 — 끝나면 바로 게시돼요', null); } });
+    paintAutoAi();
+  })();
   $('ai-key-btn').addEventListener('click', setOpenAIKey);
   $('ai-image-btn').addEventListener('click', async ()=>{
     // 첫 사용 시 한 번만 ChatGPT 연결 여부를 물어봄 (건너뛰면 무료 AI)
@@ -5075,12 +5169,21 @@ body.viewer #mine-empty{display:none!important}
       if(ok) showSnack('수정했어요', '보기', ()=>openReader(a));
       else showSnack('수정은 화면에 반영됐지만 이 기기에 저장하지 못했어요. 새로고침 전에 백업으로 내보내 두세요', null);
     } else {
-      const art={ id:'a'+Date.now(), cat:selectedCat, live:liveInput.checked, feature:featInput.checked,
-        source:sourceInput.value.trim()||'입시 리서치 데스크', title:t, body:bodyInput.value, media:curMedia, ts:Date.now(),
+      // 첨부가 하나도 없으면 ChatGPT로 대표 이미지를 자동 생성 (실패·시간초과여도 게시는 그대로 진행)
+      const catBtn=document.querySelector('#cat-row .cat[aria-pressed="true"]');
+      const snap={ cat:selectedCat, catLabel:catBtn?catBtn.textContent.trim():'', live:liveInput.checked, feature:featInput.checked,
+        source:sourceInput.value.trim()||'입시 리서치 데스크', body:bodyInput.value };
+      let media=curMedia, autoNote='';
+      if(!media){
+        const r=await maybeAutoCover(t, snap);
+        media=curMedia||r.media; autoNote=r.note||'';
+      }
+      const art={ id:'a'+Date.now(), cat:snap.cat, live:snap.live, feature:snap.feature,
+        source:snap.source, title:t, body:snap.body, media:media, ts:Date.now(),
         likes:0, liked:false, bookmarked:false, comments:[] };
       articles.unshift(art);
       const ok=await persist(art); clearDraft(); render(); composer.classList.remove('open');
-      if(ok) showSnack('게시했어요'+(art.feature?' · 주요 기사에도 노출':''), '보기', ()=>openReader(art));
+      if(ok) showSnack('게시했어요'+(art.feature?' · 주요 기사에도 노출':'')+(autoNote?' · '+autoNote:''), '보기', ()=>openReader(art), autoNote?7000:undefined);
       else showSnack('게시는 됐지만 이 기기에 저장하지 못했어요. 새로고침 전에 백업으로 내보내 두세요', null);
       setTimeout(()=>screen.scrollTo({top:0,behavior:'smooth'}),120);
     }
