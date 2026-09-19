@@ -4534,12 +4534,16 @@ body.viewer #mine-empty{display:none!important}
   function clearOpenAIKey(){ OPENAI_KEY=''; try{appStorage.removeItem('elifsuwon_openai_key');}catch(e){} }
   async function genImageOpenAI(prompt, opt){
     opt=opt||{};
-    const models=opt.models||['gpt-image-1','dall-e-3'];
+    // 수동 'AI 이미지' 버튼도 자동 생성과 같은 모델 순서·크기·품질을 쓴다 (아래 AUTO_IMG_* 상수).
+    // 예전 기본값 dall-e-3 는 2026-05-12 에 종료됐다. gpt-image-1 도 2026-10-23 종료 예정이니
+    // 그 뒤에는 AUTO_IMG_MODELS / AUTO_IMG_SIZES 에서 지워도 된다.
+    const models=opt.models||AUTO_IMG_MODELS;
+    const sizes=opt.sizes||AUTO_IMG_SIZES;
+    const quality=opt.quality||AUTO_IMG_QUALITY;
     const call=async(model)=>{
-      const size=(opt.sizes&&opt.sizes[model])||(model==='gpt-image-1'?'1536x1024':'1792x1024');
+      const size=sizes[model]||'1536x1024';
       const body={model:model, prompt:prompt, n:1, size:size};
-      if(opt.quality && /^gpt-image/.test(model)) body.quality=opt.quality;
-      if(model==='dall-e-3') body.response_format='b64_json';
+      if(quality && /^gpt-image/.test(model)) body.quality=quality;
       const res=await fetch('https://api.openai.com/v1/images/generations',{
         method:'POST',
         headers:{'Content-Type':'application/json','Authorization':'Bearer '+OPENAI_KEY},
